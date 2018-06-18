@@ -7,6 +7,7 @@ import java.io.IOException;
 
 import javafx.application.Application;
 import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -27,6 +28,26 @@ public class MainApp extends Application {
         // Add some sample data
     	vehiculeData.add(new Vehicule());
     	vehiculeData.add(new Vehicule("Lourd", 90, Type.Lourd));
+    	vehiculeData.addListener((ListChangeListener.Change<? extends Vehicule> change) -> {
+    	    while(change.next()){
+    	        if(change.wasUpdated()){
+    	            System.out.println("Update detected");
+    	        }
+    	        else if(change.wasPermutated()){
+
+    	        }
+    	        else{
+    	            for (Vehicule remitem : change.getRemoved()) {
+    	                //do things
+    	            	System.out.println("Update detected");
+    	            }
+    	            for (Vehicule additem : change.getAddedSubList()) {
+    	                //do things
+    	            	System.out.println("Update detected");
+    	            }
+    	        }
+    	    }
+    	});
     }
 
     @Override
@@ -94,5 +115,8 @@ public class MainApp extends Application {
 
     public ObservableList<Vehicule> getVehiculeData() {
         return vehiculeData;
+    }
+    public void removeAtVehiculeData(int index) {
+        vehiculeData.remove(index);
     }
 }

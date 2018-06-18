@@ -3,6 +3,8 @@ package view;
 import com.sun.javafx.scene.web.Debugger;
 
 import control.MainApp;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -14,14 +16,16 @@ import model.Vehicule;
 public class VehiculeOverviewController {
 	 @FXML
 	private ListView<Vehicule> VehiculeList;
+
 	MainApp mainApp;
 
 	public VehiculeOverviewController() {
-		VehiculeList = new ListView();
+
     }
 
 	@FXML
     private void initialize() {
+
 		VehiculeList.setCellFactory(new Callback<ListView<Vehicule>, ListCell<Vehicule>>(){
 
             @Override
@@ -35,6 +39,7 @@ public class VehiculeOverviewController {
                         if (t != null) {
                             setText(t.getName());
                         }
+                        else { this.setText(null); }
                     }
 
                 };
@@ -55,10 +60,14 @@ public class VehiculeOverviewController {
 	}
 
 	@FXML
-	private void handleDeletePerson() {
+	private void handleDeleteVehicule() {
 	    int selectedIndex = VehiculeList.getSelectionModel().getSelectedIndex();
 	    if (selectedIndex >= 0) {
 	    	VehiculeList.getItems().remove(selectedIndex);
+
+
+
+
 	    } else {
 	        // Nothing selected.
 	        Alert alert = new Alert(AlertType.WARNING);
@@ -69,6 +78,11 @@ public class VehiculeOverviewController {
 
 	        alert.showAndWait();
 	    }
+	}
+
+	@FXML
+	private void handleAddVehicule() {
+
 	}
 
 }

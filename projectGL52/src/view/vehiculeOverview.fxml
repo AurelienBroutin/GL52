@@ -9,7 +9,7 @@
    <children>
       <ListView fx:id="VehiculeList" layoutX="23.0" layoutY="41.0" prefHeight="313.0" prefWidth="207.0" />
       <Label layoutX="23.0" layoutY="14.0" prefHeight="25.0" prefWidth="207.0" text="Groupe de véhicules" />
-      <Button layoutX="23.0" layoutY="361.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="104.0" text="Ajouter" />
-      <Button layoutX="126.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleDeletePerson" prefHeight="25.0" prefWidth="104.0" text="Supprimer" />
+      <Button layoutX="23.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleAddVehicule" prefHeight="25.0" prefWidth="104.0" text="Ajouter" />
+      <Button layoutX="126.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleDeleteVehicule" prefHeight="25.0" prefWidth="104.0" text="Supprimer" />
    </children>
 </AnchorPane>
