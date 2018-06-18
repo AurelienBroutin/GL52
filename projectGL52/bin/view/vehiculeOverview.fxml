@@ -7,10 +7,9 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.VehiculeOverviewController">
    <children>
-      <ListView fx:id="vehiculeList" layoutX="23.0" layoutY="41.0" prefHeight="313.0" prefWidth="207.0" />
+      <ListView fx:id="VehiculeList" layoutX="23.0" layoutY="41.0" prefHeight="313.0" prefWidth="207.0" />
       <Label layoutX="23.0" layoutY="14.0" prefHeight="25.0" prefWidth="207.0" text="Groupe de véhicules" />
-      <Button layoutX="23.0" layoutY="361.0" mnemonicParsing="false" text="Ajouter" />
-      <Button layoutX="88.0" layoutY="361.0" mnemonicParsing="false" text="Modifier" />
-      <Button layoutX="158.0" layoutY="361.0" mnemonicParsing="false" text="Supprimer" />
+      <Button layoutX="23.0" layoutY="361.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="104.0" text="Ajouter" />
+      <Button layoutX="126.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleDeletePerson" prefHeight="25.0" prefWidth="104.0" text="Supprimer" />
    </children>
 </AnchorPane>

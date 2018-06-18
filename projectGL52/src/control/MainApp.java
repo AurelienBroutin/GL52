@@ -33,7 +33,7 @@ public class MainApp extends Application {
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Traffic Simulation");
-        
+
         initRootLayout();
 
         showVehiculeOverview();
@@ -59,7 +59,7 @@ public class MainApp extends Application {
     }
 
     /**
-     * Shows the person overview inside the root layout.
+     * Shows the Vehicule overview inside the root layout.
      */
     public void showVehiculeOverview() {
         try {
