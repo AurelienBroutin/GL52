@@ -121,12 +121,21 @@ public class VehiculeOverviewController {
 	        {
 	        	initAddDialogStage();
 	        }
+
+	        AddVehicleController v = loader.getController();
+	        v.setMainWindow(this);
+
 	        Scene scene = new Scene(addDialog);
             addDialogStage.setScene(scene);
             addDialogStage.show();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+
+	public void addVehicle(Vehicule v)
+	{
+		mainApp.addVehicle(v);
 	}
 
 	private void initAddDialogStage() {

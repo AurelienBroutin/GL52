@@ -116,6 +116,11 @@ public class MainApp extends Application {
     public ObservableList<Vehicule> getVehiculeData() {
         return vehiculeData;
     }
+
+    public void addVehicle(Vehicule v) {
+    	vehiculeData.add(v);
+    }
+
     public void removeAtVehiculeData(int index) {
         vehiculeData.remove(index);
     }
