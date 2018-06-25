@@ -8,6 +8,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
@@ -17,7 +18,13 @@ import model.Vehicule;
 public class VehiculeOverviewController {
 	 @FXML
 	private ListView<Vehicule> VehiculeList;
-		
+	 
+	 @FXML
+	private ChoiceBox<String> feux;
+	 
+	 @FXML
+	private ChoiceBox<String> debit;
+			
 
 	MainApp mainApp;
 
@@ -86,5 +93,19 @@ public class VehiculeOverviewController {
 	private void handleAddVehicule() {
 
 	}
+	
+	@FXML
+	private void selectFeux() {
+		String outputFeux = (String) feux.getValue();
+		System.out.println(outputFeux);
+	}
+	
+	@FXML
+	private void selectDebit() {
+		String outputDebit = (String) debit.getValue();
+		System.out.println(outputDebit);
+	}
+	
+	
 
 }
