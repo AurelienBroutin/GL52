@@ -3,11 +3,14 @@ package view;
 import com.sun.javafx.scene.web.Debugger;
 
 import control.MainApp;
+import javafx.beans.binding.Binding;
+import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.control.ListCell;
@@ -24,6 +27,9 @@ public class VehiculeOverviewController {
 	 
 	 @FXML
 	private ChoiceBox<String> debit;
+	 
+	 @FXML
+	private Button next;
 			
 
 	MainApp mainApp;
@@ -81,9 +87,9 @@ public class VehiculeOverviewController {
 	        // Nothing selected.
 	        Alert alert = new Alert(AlertType.WARNING);
 	        alert.initOwner(mainApp.getPrimaryStage());
-	        alert.setTitle("No Selection");
-	        alert.setHeaderText("No vehicule Selected");
-	        alert.setContentText("Please select a vehicule in the list.");
+	        alert.setTitle("Pas de sélection");
+	        alert.setHeaderText("Aucun véhicule sélectionné");
+	        alert.setContentText("Veuillez sélectionner un véhicule dans la liste");
 
 	        alert.showAndWait();
 	    }
@@ -96,14 +102,33 @@ public class VehiculeOverviewController {
 	
 	@FXML
 	private void selectFeux() {
-		String outputFeux = (String) feux.getValue();
-		System.out.println(outputFeux);
+		String output = (String) feux.getValue();
+		System.out.println(output);
+		int outputFeux = Integer.parseInt(output);
 	}
 	
 	@FXML
 	private void selectDebit() {
-		String outputDebit = (String) debit.getValue();
-		System.out.println(outputDebit);
+		String output = (String) debit.getValue();
+		System.out.println(output);
+		int outputDebit = Integer.parseInt(output);
+	}
+	
+	@FXML
+	private void checkNext() {
+		ObservableList<Vehicule> items = VehiculeList.getItems();
+
+		if (items.isEmpty()) {
+			Alert alert = new Alert(AlertType.WARNING);
+	        alert.initOwner(mainApp.getPrimaryStage());
+	        alert.setTitle("Erreur");
+	        alert.setHeaderText("Aucun groupe de véhicule");
+	        alert.setContentText("Veuillez en ajouter un");
+
+	        alert.showAndWait();
+		} else {
+		     
+		}
 	}
 	
 	

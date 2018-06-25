@@ -48,7 +48,7 @@
             </FXCollections>
       	</items>
       </ChoiceBox>
-      <Button layoutX="511.0" layoutY="349.0" mnemonicParsing="false" text="SUIVANT" />
+      <Button fx:id="next" layoutX="511.0" layoutY="349.0" onAction="#checkNext" mnemonicParsing="false" text="SUIVANT" />
       <Label layoutX="567.0" layoutY="14.0" prefHeight="25.0" prefWidth="19.0" text="s" />
    </children>
 </AnchorPane>
