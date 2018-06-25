@@ -27,7 +27,7 @@ public class MainApp extends Application {
     public MainApp() {
         // Add some sample data
     	vehiculeData.add(new Vehicule());
-    	vehiculeData.add(new Vehicule("Lourd", 90, Type.Lourd));
+    	vehiculeData.add(new Vehicule("Lourd", 90, 10, Type.Lourd));
     	vehiculeData.addListener((ListChangeListener.Change<? extends Vehicule> change) -> {
     	    while(change.next()){
     	        if(change.wasUpdated()){
